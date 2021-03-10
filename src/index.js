@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import Routers from 'page/Router';
+import Loading from 'page/Loading';
+import 'assets/globalStyle.scss';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback={Loading}>
+      <Routers></Routers>
+    </Suspense>
   </React.StrictMode>,
   document.getElementById('root')
 );
